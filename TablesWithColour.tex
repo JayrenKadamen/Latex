@@ -1,0 +1,34 @@
+
+%Colours for cells in tables - if it gives you an error using [tables] option then include 'tables' in your documentclass
+\usepackage[usenames,dvipsnames]{xcolor}% http://ctan.org/pkg/xcolor
+
+%Right adjusted columns in tables
+\usepackage{array,booktabs,ragged2e}
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+
+%Table with colours
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{p{3cm} p{3cm} p{3cm} p{3cm}} %Use | to add vertical lines 
+		\hline
+		\multicolumn{4}{c}{\textbf{\underline{F-Test Two-Sample Variances at 95\% Significance Level}}} \\
+		\hline
+		\multicolumn{4}{c}{\underline{Desks}} \\
+		\hline
+		%Cell colour changes the colour of the cell with the number next to it specifying the intensity
+		\multicolumn{1}{l}{\cellcolor{gray!25}} & \multicolumn{1}{l}{\cellcolor{gray!25} Postgrad Lab } & \multicolumn{1}{l}{\cellcolor{gray!25} EGS } & \multicolumn{1}{l}{\cellcolor{gray!25} Snape}\\
+		\cellcolor{gray!25} Postgrad Lab & - & \cellcolor{green!50} PASS & \cellcolor{green!50} PASS \\
+		\cellcolor{gray!25} EGS & \cellcolor{green!50} PASS & - & \cellcolor{green!50} PASS \\
+		\cellcolor{gray!25} Snape & \cellcolor{green!50} PASS & \cellcolor{green!50} PASS & - \\
+		\hline
+		\multicolumn{4}{c}{\underline{Chair}} \\
+		\hline
+		\multicolumn{1}{l}{\cellcolor{gray!25}} & \multicolumn{1}{l}{\cellcolor{gray!25} Postgrad Lab } & \multicolumn{1}{l}{\cellcolor{gray!25} EGS } & \multicolumn{1}{l}{\cellcolor{gray!25} Snape}\\
+		\cellcolor{gray!25} Postgrad Lab & - & \cellcolor{green!50} PASS & \cellcolor{green!50} PASS \\
+		\cellcolor{gray!25} EGS & \cellcolor{green!50} PASS & - & \cellcolor{green!50} PASS \\
+		\cellcolor{gray!25} Snape & \cellcolor{green!50} PASS & \cellcolor{green!50} PASS & - \\
+		\hline
+	\end{tabular}
+	\caption{Matrix of F-Test results for non-normalised heights.}
+	\label{matrixNonNormal}
+\end{table}
