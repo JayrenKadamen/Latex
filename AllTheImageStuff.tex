@@ -1,0 +1,55 @@
+%Including a figure
+\begin{figure}[ht!] %Does not allow the figure to float
+	\centering
+	\includegraphics[width=0.85\linewidth]{./images/"SFM"}
+	\caption[This bit is seen on list of figures page]{This text is the caption that goes below image \citep{fergus_lecture_2012}.
+		\label{labelGoesHereInsideBracket}}
+\end{figure}
+
+%Side by side figures
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}{.45\linewidth}%Ensures that images are alongside each other
+		\includegraphics[width=0.85\linewidth]{./images/"image1"}
+		\caption[image1]{Caption 1}
+		\label{image1}
+	\end{minipage}
+	\hspace{.05\linewidth}%Allows slight space between images
+	\begin{minipage}{.45\linewidth}
+		\includegraphics[width=\linewidth]{./images/"image2"}
+		\caption[image2]{Caption 2}
+		\label{image2}
+	\end{minipage}
+	\rule[0.5em]{38em}{0.5pt}%Hrule for both images
+	More text can go here
+\end{figure}
+
+%Letting images spill over
+\begin{figure}[ht!]
+	\centering
+	%"center" below is used to centre the image even though it has spilled over the linewidth, the following package must be specified in the document setup:\usepackage[export]{adjustbox}
+	\includegraphics[width=1.15\linewidth,center]{./images/"yeah"}
+	\caption[blahblah]{Stuff
+		\label{label}}
+\end{figure}
+
+%Sideways figure: use package: \usepackage{rotating}
+\begin{sidewaysfigure}[h!]
+	\centering
+	\includegraphics[width=\textwidth,center]{./images/"Original2"}
+	%Multiple images can be stacked on top of one another easily
+	\includegraphics[width=\textwidth,center]{./images/"Normals"}
+	\caption{A point cloud representation of the EGS Seminar Room.\label{EGS}}
+\end{sidewaysfigure}
+
+%Multiple images stacked on top of one another with a, b, c, labels
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\textwidth,center]{./images/"EGS"}
+	(a)
+	\includegraphics[width=1.0\textwidth,center]{./images/"VEGS_Oblique"}
+	(b)
+	\includegraphics[width=1.0\textwidth,center]{./images/"HEGS_Oblique2"}
+	(c)
+	\caption[Results of the plane segmentation for the EGS Seminar Room]{\textbf{(a):} EGS original point cloud. \textbf{(b):} Vertical Planes. \textbf{(c):} Horizontal Planes: Desks are coloured blue, chairs are coloured green.\label{FinalEGS}}
+\end{figure}
